@@ -54,7 +54,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					}else{
 						$id = $_GET['pro_id'];
 					}
-					if($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['add_to_cart']){
+					if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_to_cart'])){
 						$quantity = $_POST['quantity'];
 						$check_user = Session :: get('user_login');
 						$msg = $check_user;
@@ -66,6 +66,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							window.location='login.php';
 							</script>";
 						}
+					}
+					if(isset($_POST['binhluan_submit'])){
+						$binhluan_insert = $user->insert_binhluan();
 					}
 				?>
 				<div class="mobile-nav-button">
@@ -243,44 +246,44 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div id="horizontalTab">
 					<ul class="resp-tabs-list">
 						<!-- <li>Reviews</li> -->
-						<li>Information</li>
+						<li>Bình Luận</li>
+						<li>Thông Tin Về Sản Phẩm</li>
+						
 					</ul>
 					<div class="resp-tabs-container">
-						<!--/tab_one-->
+						<!-- /tab_one-->
 						
 						<!--//tab_one-->
-						<!-- <div class="tab2">
+						<div class="tab2">
 
 							<div class="single_page">
 								<div class="bootstrap-tab-text-grids">
 									<div class="bootstrap-tab-text-grid">
 										<div class="bootstrap-tab-text-grid-left">
-											<img src="images/t1.jpg" alt=" " class="img-responsive">
+											<img src="admin/uploads/<?php echo $chitiet['product_image'] ?>" alt=" " class="img-responsive">
 										</div>
 										<div class="bootstrap-tab-text-grid-right">
 											<ul>
-												<li><a href="#">Admin</a></li>
+												<li><a href="#">Xin Chào</a></li>
 												<li><a href="#"><i class="fa fa-reply-all" aria-hidden="true"></i> Reply</a></li>
 											</ul>
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elPellentesque vehicula augue eget.Ut enim ad minima veniam,
-												quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis
-												autem vel eum iure reprehenderit.</p>
+											
 										</div>
 										<div class="clearfix"> </div>
 									</div>
 									<div class="add-review">
-										<h4>add a review</h4>
-										<form action="#" method="post">
-											<input type="text" name="Name" required="Name">
-											<input type="email" name="Email" required="Email">
-											<textarea name="Message" required=""></textarea>
-											<input type="submit" value="SEND">
-										</form>
+										<h4>Thêm Đánh Giá</h4>
+										<form action="" method="POST">
+				<p><input type="hidden" value="<?php echo $id ?>" name="product_id_binhluan"></p>
+	 			<p><input type="text" placeholder="Điền tên" class="form-control" name="tennguoibinhluan"></p>
+	 			<p><textarea rows="5" style="resize: none;" placeholder="Bình luận...." class="form-control" name="binhluan"></textarea></p>
+	 			<p><input type="submit" name="binhluan_submit" class="btn btn-success" value="Gửi bình luận"></p>
+ 			</form>
 									</div>
 								</div>
 
 							</div>
-						</div> -->
+						</div> 
 						<div class="tab3">
 
 							<div class="single_page">

@@ -36,7 +36,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="wrapper_top_w3layouts">
 			<div class="header_agileits">
 				<div class="logo inner_page_log">
-					<h1><a class="navbar-brand" href="index.php"><span>A-V</span> <i>Shoes</i></a></h1>
+					<h1><a class="navbar-brand" href="index.php"><span>HOAGAF</span> <i>Shoes</i></a></h1>
 				</div>
 				<?php
 					include 'include/sidebar.php'
