@@ -49,13 +49,13 @@
                 $alert = "<span class = 'error'>Bạn phải điền đủ thông tin</span>";
                 return $alert;
             }else{
-                $check_email = "SELECT * FROM tbl_custumer WHERE cus_email = '$cus_email' LIMIT 1";
+                $check_email = "SELECT * FROM tbl_custumer WHERE cus_email = '$cus_email' ";
                 $result_check = $this->db->select($check_email);
                 if($result_check){
                     $alert = "<span class = 'error'>Email đã tồn tại</span>";
                     return $alert;
                 }else{
-                    $query = "INSERT INTO tbl_custumer(cus_name,cus_email,cus_pass,cus_phone,apartment_number,city,ses_id) VALUES('$cus_name','$cus_email','$cus_pass','$cus_phone','$apartment_number','$city','$session') LIMIT 1";
+                    $query = "INSERT INTO tbl_custumer(cus_name,cus_email,cus_pass,cus_phone,apartment_number,city,ses_id) VALUES('$cus_name','$cus_email','$cus_pass','$cus_phone','$apartment_number','$city','$session') ";
                     $result = $this->db->insert($query);
                     if($result){
                         $alert = "<span class = 'success'>Đăng ký thành công </span>";
@@ -75,7 +75,7 @@
                 $alert = "<span class = 'error'>Mời nhập thông tin đăng nhập</span>";
                 return $alert;
             }else{
-                $check = "SELECT * FROM tbl_custumer WHERE cus_email = '$cus_email' AND cus_pass = '$cus_pass' LIMIT 1";
+                $check = "SELECT * FROM tbl_custumer WHERE cus_email = '$cus_email' AND cus_pass = '$cus_pass' ";
                 $check_result = $this->db->select($check);
                 if($check_result!=false){
                     $value= $check_result->fetch_assoc();

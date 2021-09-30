@@ -26,7 +26,7 @@
             $pr_id = $result['product_id'];
             $pr_price = $result['product_sale'];
             $pr_image = $result['product_image'];
-            $query_cart = "INSERT INTO tbl_cart(product_name,product_price,product_id,product_image,ses_id,quantity) VALUES('$pr_name','$pr_price','$pr_id','$pr_image','$session_id','$quantity') LIMIT 1";
+            $query_cart = "INSERT INTO tbl_cart(product_name,product_price,product_id,product_image,ses_id,quantity) VALUES('$pr_name','$pr_price','$pr_id','$pr_image','$session_id','$quantity') ";
             $result_cart = $this->db->insert($query_cart);
             if($result_cart){
                 header("Location:checkout.php");
@@ -71,7 +71,7 @@
             return $result;
         }  
         public function show_user(){
-            $query = "SELECT tbl_cart.*,tbl_custumer.* FROM tbl_cart INNER JOIN tbl_custumer ON tbl_cart.ses_id = tbl_custumer.ses_id LIMIT 1";
+            $query = "SELECT tbl_cart.*,tbl_custumer.* FROM tbl_custumer INNER JOIN tbl_cart ON tbl_cart.ses_id = tbl_custumer.ses_id ";
             $result = $this->db->select($query);
             return $result;
         }    
@@ -86,7 +86,7 @@
                     $quantity = $result['quantity'];
                     $price = $result['product_price']*$quantity;
                     $cus_id = $cus_id;
-                    $query_order = "INSERT INTO tbl_offline_payment(product_name,price,product_id,quantity,cus_id) VALUES('$product_name','$price','$product_id','$quantity','$cus_id') LIMIT 1";
+                    $query_order = "INSERT INTO tbl_offline_payment(product_name,price,product_id,quantity,cus_id) VALUES('$product_name','$price','$product_id','$quantity','$cus_id') ";
                     $insert_order = $this->db->insert($query_order);
                 }
             }

@@ -23,7 +23,7 @@
             $quantity = $result['quantity'];
             $price = $result['product_price'];
             $subtotal = $quantity*$price+30000;
-            $query_cart = "INSERT INTO tbl_offline_payment(status_order,ses_id,subtotal) VALUES('$status','$session_id','$subtotal') LIMIT 1";
+            $query_cart = "INSERT INTO tbl_offline_payment(status_order,ses_id,subtotal) VALUES('$status','$session_id','$subtotal') ";
             $result_cart = $this->db->insert($query_cart);
             if($result_cart){
                 header("Location:list_order.php");

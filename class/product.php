@@ -41,7 +41,7 @@
                 return $alert;
             }else{
                 move_uploaded_file($file_temp,$uploaded_image);
-                $query = "INSERT INTO tbl_product(product_name,product_price,cat_id,product_desc,product_type,product_image,product_sale) VALUES('$product_name','$product_price','$product_brand','$product_desc','$product_type','$unique_image','$product_sale') LIMIT 1";
+                $query = "INSERT INTO tbl_product(product_name,product_price,cat_id,product_desc,product_type,product_image,product_sale) VALUES('$product_name','$product_price','$product_brand','$product_desc','$product_type','$unique_image','$product_sale') ";
                 $result = $this->db->insert($query);
                 if($result){
                     $alert = "<span class = 'success'>Thêm thành công </span>";

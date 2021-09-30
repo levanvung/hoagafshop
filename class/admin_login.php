@@ -27,7 +27,7 @@
                 $alert = "Please enter your user or pass";
                 return $alert;
             }else{
-                $query = "SELECT * FROM tbl_admin WHERE admin_user = '$admin_user' AND admin_pass = '$admin_pass' LIMIT 1";
+                $query = "SELECT * FROM tbl_admin WHERE admin_user = '$admin_user' AND admin_pass = '$admin_pass' ";
                 $result = $this->db->select($query);
                 if($result != false){
                     $value = $result->fetch_assoc();

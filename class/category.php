@@ -23,7 +23,7 @@
                 $alert = "This must be not empty";
                 return $alert;
             }else{
-                $query = "INSERT INTO tbl_category(cat_name) VALUES('$cat_name') LIMIT 1";
+                $query = "INSERT INTO tbl_category(cat_name) VALUES('$cat_name') ";
                 $result = $this->db->insert($query);
                 if($result){
                     $alert = "<span class = 'success'>Thêm thành công </span>";

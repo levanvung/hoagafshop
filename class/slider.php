@@ -36,7 +36,7 @@
                 return $alert;
             }else{
                 move_uploaded_file($file_temp,$uploaded_image);
-                $query = "INSERT INTO tbl_slider(slider_content,slider_type,slider_image,slider_title) VALUES('$slider_content','$slider_type','$unique_image','$slider_title') LIMIT 1";
+                $query = "INSERT INTO tbl_slider(slider_content,slider_type,slider_image,slider_title) VALUES('$slider_content','$slider_type','$unique_image','$slider_title') ";
                 $result = $this->db->insert($query);
                 if($result){
                     $alert = "<span class = 'success'>Thêm thành công </span>";
